@@ -7,7 +7,7 @@ function recordDecorator(func) {
 
   function wrapper(...arr) {
     wrapper.calls.push(`record:${arr[0]},${arr[1]} `);
-    return func.apply(this, arr);
+    func.apply(this, arr);
   }
 
   return wrapper;
